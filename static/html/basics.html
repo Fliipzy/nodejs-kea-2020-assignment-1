@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NodeJS 2020 KEA | Basics</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/prism.css"/>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <!--Navbar fragment-->
+    <div id="navbar-fragment"></div>
+
+    <div id="content" class="container">
+        <h1 class="display-4 doc-header">JavaScript basics</h1>
+        <h2>Variables</h2>
+        <p class="doc-paragraf">
+            JavaScript variables are containers for storing data values. <br>
+            In this example, x, y, and z, are variables:
+        </p>
+        <pre><code class="language-javascript">
+var x = 5;
+var y = 6;
+var z = x + y;
+        </code></pre>
+        <br>
+        <h1 class="display-4 doc-header">Node.JS basics</h1>
+        <h2>What is it?</h2>
+        <p class="doc-paragraf">
+            Node.js is an open source server environment <br>
+            Node.js is free <br>
+            Node.js runs on various platforms (Windows, Linux, Unix, Mac OS X, etc.) <br>
+            Node.js uses JavaScript on the server
+        </p>
+        <h2>What can I do with it?</h2>
+        <h2>Node package manager (NPM)</h2>
+        <p class="doc-paragraf">
+            NPM is a package manager for Node.js packages, or modules if you like.
+            www.npmjs.com hosts thousands of free packages to download and use.
+            The NPM program is installed on your computer when you install Node.js
+        </p>
+        
+    </div>
+
+    <!--Scripts-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="../js/prism.js"></script>
+
+    <!--Footer fragment-->
+    <div id="footer-fragment"></div>
+
+    <script>
+        $(document).ready(function() {
+            $('#navbar-fragment').load('../html/fragments/navbar.html')
+            $('#footer-fragment').load('../html/fragments/footer.html')
+        })
+    </script>
+</body>
+</html>

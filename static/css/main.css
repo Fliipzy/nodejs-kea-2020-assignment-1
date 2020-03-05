@@ -2,12 +2,26 @@
     margin-bottom: 2em;
 }
 
+#content {
+    padding-bottom: 100px;
+}
+
 #footer {
-    position: absolute;
+    position: fixed;
+    left: 0;
     bottom: 0;
     width: 100%;
     height: 2.5em;
     padding: 7px;
     text-align: center;
+    margin-top: 10em;
+}
+
+.doc-header {
+    margin-bottom: 0.5em;
+}
+
+.doc-paragraf {
+    font-size: 1.25em;
 }
 

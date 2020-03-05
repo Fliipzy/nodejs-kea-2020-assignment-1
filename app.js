@@ -7,7 +7,7 @@ const port = 8080
 
 app.use(express.static('./static/'))
 
-//HTML routing
+//HTML file routing
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/static/html/index.html')
@@ -20,6 +20,16 @@ app.get('/about', (req, res) => {
 app.get('/api', (req, res) => {
     res.sendFile(__dirname + '/static/html/api.html')
 })
+
+app.get('/docs', (req, res) => {
+    res.sendFile(__dirname + '/static/html/docs.html')
+})
+
+app.get('/docs/basics', (req, res) => {
+    res.sendFile(__dirname + '/static/html/basics.html')
+})
+
+//Api routing
 
 const api_prefix = '/api'
 
