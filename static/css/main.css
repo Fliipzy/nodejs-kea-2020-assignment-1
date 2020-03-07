@@ -1,3 +1,4 @@
+
 #navbar {
     margin-bottom: 2em;
 }
@@ -17,11 +18,35 @@
     margin-top: 10em;
 }
 
+/*
+Docs content
+*/
+
 .doc-header {
     margin-bottom: 0.5em;
 }
 
+.doc-header:nth-of-type(n+2) {
+    margin-top: 1em;
+}
+
+.doc-lead {
+    margin-bottom: 0.5em;
+    margin-top: 1.5em;
+}
+
 .doc-paragraf {
     font-size: 1.25em;
+}
+
+/*
+Scrollspy content
+*/
+
+.list-item-header {
+    background-color: #e8e8ef;
+    font-size: 1.2em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
 }
 

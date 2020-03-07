@@ -2,7 +2,6 @@ const express = require('express')
 const app = express()
 const port = 8080
 
-
 //Set up static directory routing
 
 app.use(express.static('./static/'))

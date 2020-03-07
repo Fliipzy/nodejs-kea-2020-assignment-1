@@ -12,35 +12,132 @@
 <body>
     <!--Navbar fragment-->
     <div id="navbar-fragment"></div>
-
+    
     <div id="content" class="container">
-        <h1 class="display-4 doc-header">JavaScript basics</h1>
-        <h2>Variables</h2>
-        <p class="doc-paragraf">
-            JavaScript variables are containers for storing data values. <br>
-            In this example, x, y, and z, are variables:
-        </p>
-        <pre><code class="language-javascript">
-var x = 5;
-var y = 6;
-var z = x + y;
-        </code></pre>
-        <br>
-        <h1 class="display-4 doc-header">Node.JS basics</h1>
-        <h2>What is it?</h2>
-        <p class="doc-paragraf">
-            Node.js is an open source server environment <br>
-            Node.js is free <br>
-            Node.js runs on various platforms (Windows, Linux, Unix, Mac OS X, etc.) <br>
-            Node.js uses JavaScript on the server
-        </p>
-        <h2>What can I do with it?</h2>
-        <h2>Node package manager (NPM)</h2>
-        <p class="doc-paragraf">
-            NPM is a package manager for Node.js packages, or modules if you like.
-            www.npmjs.com hosts thousands of free packages to download and use.
-            The NPM program is installed on your computer when you install Node.js
-        </p>
+        <div class="row">
+            <div class="col-3">
+                <!--Scrollspy column-->
+                <div id="doc-list" class="list-group">
+                    <div class="list-group-item list-item-header">Node.JS basics</div>
+                    <a class="list-group-item list-group-item-action" href="#list-item-1">1. What is it?</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-2">2. What can I do with it?</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-3">3. How to run a program</a>
+                    <div class="list-group-item list-item-header">JavaScript basics</div>
+                    <a class="list-group-item list-group-item-action" href="#list-item-4">4. Variables</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-5">5. Var, let and const keywords</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-6">5. Functions</a>
+                    
+                  </div>
+            </div>
+            <div class="col-8">
+                <div data-spy="scroll" data-target="#doc-list" data-offset="0" class="scrollspy-example"></div>
+                <!--Doc column-->
+                <!--Node.JS Basics-->
+                <h1 class="display-4 doc-header">Node.JS basics</h1>
+
+                <h4 id="list-item-1" class="doc-lead">What is it?</h4>
+                <p class="doc-paragraf">
+                    Node.JS is a runtime enviroment for running JavaScript code outside the browser,
+                    which you couldn't do before.
+                    <br>
+                    It runs on the very popular JavaScript <a href="https://v8.dev/">V8</a> engine created by the Google Chrome people.
+                </p>
+
+                <h4 id="list-item-2" class="doc-lead">What can I do with it?</h4>
+                <p class="doc-paragraf">
+                    You can do alot with Node.JS. Wanna build easy scalable back-end web applications, <br> 
+                    maybe desktop applications or use it's awesome package manager NPM? <br>
+                    These are just some of the things you can do with node.
+                </p>
+
+                <h4 id="list-item-3" class="doc-lead">How do I run a node program?</h4>
+                <p class="doc-paragraf">
+                    Just locate the folder where your .js program is stored. <br>
+                    Now, in your favorite shell ─ run this command:
+                </p>
+
+                <pre><code class="language-shell">
+C:\Users\Your profile\MyProject> Node App.js 
+                </code></pre>
+                
+
+                <!--JavaScript Basics-->
+                <h1 class="display-4 doc-header">JavaScript basics</h1>
+
+                <h4 id="list-item-4" class="doc-lead">Variables</h4>
+                <p class="doc-paragraf">
+                    JavaScript has loosely-typed variables. It means variables aren't declared
+                    with a particular data type, like in Java or C#. Instead you can declare variables using
+                    the keywords: <b>var</b>, <b>let</b> or <b>const</b>. In fact you can declare a variable
+                    by providing only it's name and value, that is however not recommended because it 
+                    can accidently overwrite an existing global variable.
+                    <br> 
+                    <br>
+                    Variables are used for storing data values, like almost any other language.
+                    <br>
+                    Heres an example, where we declare two variables using the var keyword:
+                    <pre><code class="language-javascript">
+var x = 10;
+var y = 'Hello, World';
+                    </code></pre>
+                    <br>
+                    <p class="doc-paragraf">
+                        In the above example, we declared 2 variables:<br>
+                        We assigned the numeric value 10 to x.<br>
+                        We assigned a string value to y.<br>
+                        <br>
+                        
+                    </p>
+
+                    <h4 id="list-item-5" class="doc-lead">Difference between var, let and const?</h4>
+
+                    <p class="doc-paragraf">
+                        The keywords <b>var</b> and <b>let</b> are used for the exact same thing, 
+                        declaring variables. <br>
+                        The difference between the two are what scope the variable will be in:
+                        <br><br>
+                        With <b>let</b>, the variable will only exist in the scope it was 
+                        declared in.<br>
+                    </p>
+                        <pre><code class="language-javascript">
+for(let i = 0; i < 10; i++){
+    console.log(i); 
+    //prints 0,1,2..,9
+}
+console.log(i);
+//i will not exist here and the program will crash
+                        </code></pre>
+                        <br>
+                    <p class="doc-paragraf">
+                        With <b>var</b>, the variable will belong to the whole program.
+                    </p>
+
+                    <br>
+                    <h4 id="list-item-6" class="doc-lead">Functions</h4>
+                    
+                    <p class="doc-paragraf">
+                        Functions in JavaScript is like any other programming language,
+                        just a block of code that should serve to do a specific thing.
+                        <br>
+                        Heres an example:
+                    </p>
+
+                    <pre><code class="language-javascript">
+function addNumbers(n1, n2) {
+    return n1 + n2;
+}
+                    </code></pre>
+                    <br>
+                    <p class="doc-paragraf">
+                        Functions are executed when it's invoked, like this:
+                    </p>
+                    
+                    <pre><code class="language-javascript">
+addNumbers(5, 3);
+                    </code></pre>
+                </p>
+            </div>
+        </div>
         
     </div>
 
