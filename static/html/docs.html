@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NodeJS 2020 KEA | Docs</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/prism.css" />
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <div id="page-container">
+        <!--Navbar-->
+        <div id="navbar-fragment"></div>
+
+        <div id="content-wrap-docs">
+
+            <!--Main container-->
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="doc-overview-col" class="col-3">
+                        <!--Scrollspy list-->
+                        <div id="doc-list" class="list-group">
+                            <div class="list-group-item list-item-header">Docs overview</div>
+                            <a class="list-group-item list-group-item-action" href="#list-item-1">1. What is it?</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-2">2. What can I do with
+                                it?</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-3">3. How to run a
+                                program</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-4">4. Variables</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-5">5. Var, let and const
+                                keywords</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-6">6. Functions</a>
+
+                        </div>
+                    </div>
+                    <div id="doc-content-col" class="col-8">
+                        
+                        <h1 class="display-4 doc-header">Docs overview</h1>
+                        <hr>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--Scripts-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#navbar-fragment').load('../html/fragments/navbar.html')
+            $('#footer-fragment').load('../html/fragments/footer.html')
+        })
+    </script>
+</body>
+</html>

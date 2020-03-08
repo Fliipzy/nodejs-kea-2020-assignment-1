@@ -12,17 +12,18 @@
 </head>
 
 <body>
-    <div class="page-container">
-        <div class="content-wrap">
+    <div id="page-container">
+        
+        <!--Navbar fragment-->
+        <div id="navbar-fragment"></div>
+        
+        <div id="content-wrap-docs">
             <!--Content begin-->
 
-            <!--Navbar fragment-->
-            <div id="navbar-fragment"></div>
-
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-3">
-                        <!--Scrollspy column-->
+                    <div id="doc-overview-col" class="col-3">
+                        <!--Scrollspy list-->
                         <div id="doc-list" class="list-group">
                             <div class="list-group-item list-item-header">Node.JS basics</div>
                             <a class="list-group-item list-group-item-action" href="#list-item-1">1. What is it?</a>
@@ -32,14 +33,13 @@
                                 program</a>
                             <div class="list-group-item list-item-header">JavaScript basics</div>
                             <a class="list-group-item list-group-item-action" href="#list-item-4">4. Variables</a>
-                            <a class="list-group-item list-group-item-action" href="#list-item-5">5. Var, let and const
-                                keywords</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-5">5. Var & let keyword difference</a>
                             <a class="list-group-item list-group-item-action" href="#list-item-6">6. Functions</a>
 
                         </div>
                     </div>
-                    <div class="col-8">
-                        <div data-spy="scroll" data-target="#doc-list" data-offset="0" class="scrollspy-example"></div>
+                    <div id="doc-content-col" class="col-8">
+                        <div data-spy="scroll" data-target="#doc-list" class="scrollspy-example"></div>
                         <!--Doc column-->
                         <!--Node.JS Basics-->
                         <h1 class="display-4 doc-header">Node.JS basics</h1>
@@ -69,7 +69,8 @@
                         <pre><code class="language-shell">
 C:\Users\Your profile\MyProject> Node App.js 
                         </code></pre>
-
+                        <br>
+                        <hr>
 
                         <!--JavaScript Basics-->
                         <h1 class="display-4 doc-header">JavaScript basics</h1>
@@ -99,7 +100,7 @@ var y = 'Hello, World';
 
                             </p>
 
-                            <h4 id="list-item-5" class="doc-lead">Difference between var, let and const?</h4>
+                            <h4 id="list-item-5" class="doc-lead">Difference between var and let?</h4>
 
                             <p class="doc-paragraf">
                                 The keywords <b>var</b> and <b>let</b> are used for the exact same thing,
@@ -133,6 +134,11 @@ for(var i = 0; i < 10; i++){
 console.log(i);
 //prints 10
                             </code></pre>
+                            <br>
+                            <p class="doc-paragraf">
+                                There's a general consensus in the JS community, to never use <b>var</b> unless you have to.
+                            </p>
+
 
                             <br>
                             <h4 id="list-item-6" class="doc-lead">Functions</h4>
@@ -158,6 +164,12 @@ function addNumbers(n1, n2) {
                             <pre><code class="language-javascript">
 addNumbers(5, 3);
                             </code></pre>
+
+                            <br>
+                            <hr>
+                            <div class="doc-next-page">
+                                <span>Continue to modules, by clicking <a class="btn btn-outline-primary" href="/docs/modules">here</a></span>
+                            </div>
                         </p>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
-
 #navbar {
-    margin-bottom: 2em;
+    position: relative;
+    margin-bottom: 0em;
 }
 
 #page-container {
@@ -9,6 +9,12 @@
 }
 
 #content-wrap {
+    margin-top: 2em;
+    padding-bottom: 2.5em;
+}
+
+#content-wrap-docs {
+    margin-top: 0em;
     padding-bottom: 2.5em;
 }
 
@@ -25,6 +31,24 @@
 Docs content
 */
 
+#doc-list {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0.5em;
+    width: 100%;
+}
+
+#doc-overview-col {
+    padding-top: 3.0em;
+    border-right: 1px solid #d4d4d4;
+}
+
+#doc-content-col {
+    padding-top: 3.0em;
+    padding-left: 1.5em;
+    border-right: 1px solid #d4d4d4;
+}
+
 .doc-header {
     margin-bottom: 0.5em;
 }
@@ -39,7 +63,16 @@ Docs content
 }
 
 .doc-paragraf {
-    font-size: 1.25em;
+    font-size: 1.10em;
+    padding-left: 0.0em;
+}
+
+.doc-next-page {
+    text-align: center;
+}
+
+.doc-next-page .btn {
+    padding: 0.1em 0.5em;
 }
 
 /*
