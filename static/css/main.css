@@ -3,19 +3,22 @@
     margin-bottom: 2em;
 }
 
-#content {
-    padding-bottom: 100px;
+#page-container {
+    position: relative;
+    min-height: 100%;
+}
+
+#content-wrap {
+    padding-bottom: 2.5em;
 }
 
 #footer {
-    position: fixed;
-    left: 0;
+    position: absolute;
     bottom: 0;
     width: 100%;
     height: 2.5em;
     padding: 7px;
     text-align: center;
-    margin-top: 10em;
 }
 
 /*
@@ -44,7 +47,10 @@ Scrollspy content
 */
 
 .list-item-header {
+    
     background-color: #e8e8ef;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 30%, rgb(173, 173, 173) 150%);
+    background-repeat: no-repeat;
     font-size: 1.2em;
     padding-top: 0.2em;
     padding-bottom: 0.2em;

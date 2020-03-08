@@ -10,16 +10,44 @@
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-    <!--Navbar fragment-->
-    <div id="navbar-fragment"></div>
+    <div class="page-container">
+        <div class="content-wrap">
+            <!--Navbar fragment-->
+            <div id="navbar-fragment"></div>
+        
+            <div class="container">
+               <h1 class="display-4">About</h1>
+               <h4 class="doc-lead">Motivation behind site</h4>
+               <p class="doc-paragraf">
+                   This site is for displaying the first mandatory assignment in the Node.JS class at KEA.  
+               </p>
 
-    <div class="container">
-        <h1>Heres some code</h1>
-        <pre><code class="language-javascript">
-const express = require('express')
-const app = express()
-const port = 8080
-        </code></pre>
+               <h4 class="doc-lead">About the assignment</h4>
+               <p class="doc-paragraf">
+                   The objective is to program a web application with express.
+                   The hosted site should contain multiple endpoints (html views), documenting what
+                   we've learned so far in class. <br><br>
+                   Requirements:
+                   <br>
+                   1. Serve the pages with express.
+                   <br>
+                   2. Split up the documentation in segments, rather than one long page.
+                   <br>
+                   3. Should contain commands.
+                   <br>
+                   4. Should contain all the tools we've used and explanation for each one.
+                   <br>
+                   5. Should cover theory that we've touched upon.
+                   <br><br>
+                   A bonus objective (not mandatory) is to research something new and implement it.
+               </p>
+
+               <h4 class="doc-lead">Blueprint of the site</h4>
+
+            </div>
+        </div>
+        <!--Footer fragment-->
+        <!-- <div id="footer-fragment"></div> -->
     </div>
 
     <!--Scripts-->
@@ -28,8 +56,6 @@ const port = 8080
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="../js/prism.js"></script>
 
-    <!--Footer fragment-->
-    <div id="footer-fragment"></div>
 
     <script>
         $(document).ready(function() {
