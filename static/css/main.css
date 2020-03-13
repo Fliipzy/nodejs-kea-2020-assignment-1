@@ -1,6 +1,6 @@
 #navbar {
-    position: relative;
-    margin-bottom: 0em;
+    position: sticky;
+    position: -webkit-sticky;
 }
 
 #page-container {
@@ -88,4 +88,6 @@ Scrollspy content
     padding-top: 0.2em;
     padding-bottom: 0.2em;
 }
+
+
 

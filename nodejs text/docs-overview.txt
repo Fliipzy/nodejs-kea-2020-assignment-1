@@ -1,0 +1,45 @@
+:: Docs overview ::
+
+This is the overiew of the documentation.
+
+__Node.js basics__
+Here you will find the basics about node.js.
+I will go into short detail and answer the following:
+
+	What is node.js?
+	
+	What can you do with node.js?
+	
+	How to run a node program?
+
+	
+__Variables__
+Here you will find the basics about variables in JavaScript.
+I try to explain the following topics:
+
+	Data types
+	
+	Creating variables
+	
+	var let & const - keywords
+	
+	Hoisting
+
+
+__Functions__
+Here you will find the basics about functions in JavaScript.
+I try to explain the following topics:
+	
+	Functions in general
+	
+	Higher order functions
+	
+	Callbacks
+	
+	Inner functions
+	
+
+__Objects__
+Here you will find the basics about objects in JavaScript.
+I try to explain the following topics:
+	

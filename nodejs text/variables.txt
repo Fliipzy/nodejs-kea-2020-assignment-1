@@ -1,0 +1,91 @@
+:: Variables ::
+
+Variables in JavaScript are containers for storing data just like any other language.
+
+__Data types__
+
+There are 7 primitive data types in JavaScript:
+	
+Boolean : true, false
+Null : nonexisting
+Undefined : value of all variables after being declared.
+Number : 64-bit floating point number. 
+BigInt : whole numbers up to (2^53)-1
+String : text
+Symbol : represents a unique identifier
+	
+Everything that is not a primitive data type in JavaScript is an object.
+That includes functions, arrays or class instances.
+
+__Creating variables__
+
+Because JavaScript is a dynamic weakly typed language, 
+we don't use type annotations, like in Java or C#.
+
+// var x = 10;
+// var y = 'Hello, World!';
+
+In the example above we declared two variables and assigned them different value types.
+
+What should also be noticed is that we used the keyword 'var' to declare each variable.
+There are three keywords for declaring variables: var, let and const.
+
+__var__
+var declares that the variable now can be accessed from all scopes in the program, 
+also considered a global variable. var variables doesn't need to be assigned any value.
+
+	function someMethod() {
+		var x = 'global';
+	}
+
+	console.log(x); //global
+
+The above example is terrible code, but shows how global variables can be accessed from anywhere.
+That's also why the keyword should be used with caution, and why it's generally considered
+better to use the let keyword instead.
+
+__let__
+let declares that the variable is only accessable from the local scope it was declared in.
+Like var, let optionally doesn't need any assigned value either.
+
+	function someMethod() {
+			let x = 'local';
+			console.log(x); //local
+	}
+
+	console.log(x); // crashes because we're out of x's scope.
+
+__const__
+const declares a read-only variable that needs to be assigned a value at it's declaration.
+const variables can't be assigned new values after being declarated. 
+You should always use the const keyword if your variable doesn't change value.
+
+	const pi = 3.141592;
+	const myName = 'John Doe';
+
+
+__Hoisting__
+
+Consider the following code:
+
+	console.log(x); //undefined
+	var x = 10;
+
+If you've coded in languages like C or C++, you'd probably expect the above program
+to throw an unknown reference exception here.
+This works in JavaScript however, due to a concept called hoisting. 
+Whenever JavaScript code is being interpreted, the interpreter will make sure all
+the global variables (vars) are moved/hoisted to the top of the file.
+
+Program after hoisting:
+
+	var x = 10;
+	console.log(x); //undefined
+	
+Hoisting does the same with functions:
+
+	greet(); //Hello, World
+	
+	function greet() {
+		console.log('Hello, World');
+	}
