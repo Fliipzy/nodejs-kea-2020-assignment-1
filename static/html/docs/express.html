@@ -22,14 +22,149 @@
 
                         <!--Content list-->
                         <div id="doc-list" class="list-group">
-                            <div class="list-group-item list-item-header">Docs overview</div>
-                            <a class="list-group-item list-group-item-action" href="#list-item-1">1. </a>
+                            <div class="list-group-item list-item-header">Express</div>
+                            <a class="list-group-item list-group-item-action" href="#list-item-1">1. Installing and starting express</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-2">2. Routing endpoints</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-3">3. Serving static content</a>
                         </div>
 
                     </div>
 
                     <div id="doc-content-col" class="col-8">
+
+                        <h1 class="display-4 doc-header">Express</h1>
+                        <hr>
+
+                        <p class="doc-paragraf">
+                            Express is a node.js web framework that provides lots of features for web applications. <br>
+                            Creating RESTful API's with Express is very quick and easy.
+                        </p>
+
+                        <h4 id="list-item-1" class="doc-lead">Installing and starting Express</h4>
                         
+                        <p class="doc-paragraf">
+                            The easiest way to install Express is with NPM, to install and save it in your dependencies list, run 
+                            this in your terminal:
+                        </p>
+                        
+                        <pre><code class="language-shell">
+npm install express --save
+                        </code></pre>
+                        <br>
+
+                        <p class="doc-paragraf">
+                            Now inside your app.js file, write the following:
+                        </p>
+                        
+                        <pre><code class="language-javascript">
+const express = require('express');
+const app = express();
+const port = 8080;
+
+...
+
+app.listen(port, function() {
+    console.log(`Server started listening on port ${port}`);
+});
+                        </code></pre>
+                        <br>
+
+                        <p class="doc-paragraf">
+                            Now all we have to do is run our app.js with node and the Express web server will start.
+                            Between the constant objects and the listen function, is where we route our endpoints.
+                        </p>
+                        
+                        
+                        <h4 id="list-item-2" class="doc-lead">Routing endpoints</h4>
+                        
+                        <p class="doc-paragraf">
+                            Endpoints are our application's (URIs) E.g /api/students, /about, /contact. <br> When we route
+                            endpoints we essential decides how our web-server responds to the clients requests. <br>
+                            For example, if a client sends this HTTP request:
+                        </p>
+                        
+                        <pre><code class="language-shell">
+GET /docs/express.html 
+                        </code></pre>
+                        <br>
+
+                        <p class="doc-paragraf">
+                            Now we want to send back the content associated with that endpoint - an html file in this
+                            instance. <br> This is pretty straight forward with Express, inside you app.js file write the following:
+                        </p>
+
+                        <pre><code class="language-javascript">
+app.get('/docs/express', function(req, res) {
+    res.sendFile(__dirname + '/html/express.html');
+});
+                        </code></pre>
+                        <br>
+                        
+                        <p class="doc-paragraf">
+                            Above we just routed a specific endpoint with the GET HTTP method. As you may be able to point out
+                            the structure for routing is the following:
+                        </p>
+
+                        <pre><code class="language-javascript">
+app.HTTP_METHOD(PATH, HANDLER)
+                        </code></pre>
+                        <br>
+                        
+                        <h4 id="list-item-3" class="doc-lead">Serving static content</h4>
+                        
+                        <p class="doc-paragraf">
+                            Once the client receives our html file and renders it in their browser, there could be images,
+                            css, js and other files referenced inside that html file. This content is usually called
+                            static content, because it doesn't have to be generated, modified or processed. <br><br>
+
+                            An example of a static ressource that a user needs in order to display the view as intended could 
+                            be a css file:
+                        </p>
+                        
+                        <pre><code class="language-markdown">
+&lt;link href="../static/css/style.css"&gt;
+                        </code></pre>
+                        <br>
+                        
+                        <p class="doc-paragraf">
+                            By default for safety measures, Express doesn't allow clients to request and receive any and all files
+                            from our system. <br> That's why we need to tell the Express app where our static content folder
+                            is located, that way we can store all the necessary files there for serving. <br><br>
+                            
+                            It's really simple to set up with Express. First create a folder in your project for static files:
+                        </p>
+
+                        <pre><code class="language-shell">
+├─ app.js
+├─ html
+│    └─ index.html
+└─ static
+     ├─ css
+     │   └─ style.css
+     ├─ js
+     └─ images
+                        </code></pre>
+                        <br>
+
+                        <p class="doc-paragraf">
+                            Now inside your app.js file, write the following:
+                        </p>
+
+                        <pre><code class="language-javascript">
+app.use(express.static('static'))
+                        </code></pre>
+                        <br>
+                        
+                        <p class="doc-paragraf">
+                            The string parameter is the relative path to the static directory from the app.js file.
+                            You can now serve the style.css file to clients.
+                        </p>
+                        
+                        <pre><code class="language-shell">
+http://localhost:8080/css/style.css
+                        </code></pre>
+                        <br>
+
                     </div>
                 </div>
             </div>
