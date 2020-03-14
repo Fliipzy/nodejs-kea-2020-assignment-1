@@ -1,0 +1,26 @@
+:: Nodemon ::
+
+Nodemon is a program that helps node developers speed up their development process, by
+automatically restarting the application when a file changes in the project.
+
+It's very easy to use since it doesn't require any additional code or configuration in your project.
+
+__How to install it?__
+You can use NPM to download and install the program:
+
+    npm install -g nodemon
+
+The -g flag indicates that you want to install nodemon globally on your system, it also
+puts the nodemon executable on your system path.
+
+If you install nodemon locally the variable path will not be set. Instead you could use
+the node package executor (NPX) tool for that.
+
+__How to use it?__
+
+It's very simple to start your node application with nodemon, just type:
+
+    nodemon <node app file>
+
+Once you need to close the running server simply type Ctrl + C into your terminal.
+

@@ -42,4 +42,47 @@ I try to explain the following topics:
 __Objects__
 Here you will find the basics about objects in JavaScript.
 I try to explain the following topics:
+
+	How objects work in javascript
+
+	Pass by reference vs value
+
+__jQuery__
+In this section i explain the basics of jQuery.
+The topics of this section is:
+
+	What is jQuery?
+
+	How to use jQuery?
+
+__Nodemon__
+In this section i explain what Nodemon is.
+The topics of this section is:
+
+	What is Nodemon?
+
+	How to use it?
+
+__Express__
+In this section i explain the basics of Express.
+The topics of this section is:
+
+	What is Express?
+
+	Routing endpoints
+
+	Serving static content
+
+	Creating a REST api with Express
+
+
+__AJAX__
+In this section i explain the basics of AJAX.
+The topics of this section is:
+
+	What is AJAX?
+
+	Why is it useful?
+
+	How to use AJAX?
 	
