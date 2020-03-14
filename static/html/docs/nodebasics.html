@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docs | Node basics</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/prism.css" />
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <div id="page-container">
+
+        <!--Navbar-->
+        <div id="navbar-fragment"></div>
+
+        <div id="content-wrap-docs">
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="doc-overview-col" class="col-3">
+
+                        <!--Content list-->
+                        <div id="doc-list" class="list-group">
+                            <div class="list-group-item list-item-header">Node basics</div>
+                            <a class="list-group-item list-group-item-action" href="#list-item-1">1. What is it?</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-2">2. What can I do with it?</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-3">3. How to run node programs.</a>
+                        </div>
+
+                    </div>
+
+                    <div id="doc-content-col" class="col-8">
+                        <!--Doc content-->
+
+                        <h1 class="display-4 doc-header">Node.js basics</h1>
+                        <hr>
+
+                        <!--What is it?-->
+                        <h4 id="list-item-1" class="doc-lead">What is it?</h4>
+                        <p class="doc-paragraf">
+                            Node.JS is a runtime enviroment for running JavaScript code outside the browser, which you couldn't do before.<br>
+                            It runs on the very popular JavaScript V8 engine created by the Google Chrome people.
+                        </p>
+
+                        <!--What can i do with it?-->
+                        <h4 id="list-item-2" class="doc-lead">What can I do with it?</h4>
+                        <p class="doc-paragraf">
+                            You can do alot with Node.JS. Wanna build easy scalable back-end web applications, <br>
+                            maybe desktop applications or use it's awesome package manager NPM? <br>
+                            These are just some of the things you can do with node.
+                        </p>
+
+                        <!--How to run a node program-->
+                        <h4 id="list-item-3" class="doc-lead">How do I run a node program?</h4>
+                        <p class="doc-paragraf">
+                            Just locate the folder where your .js program is stored.<br>
+                            Now, in your favorite shell ─ run this command:
+
+                            <pre><code class="language-shell">
+C:\Users\Your profile\MyProject> Node App.js 
+                            </code></pre>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <!--Scripts-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="../../js/prism.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#navbar-fragment').load('../html/fragments/navbar.html')
+            $('#footer-fragment').load('../html/fragments/footer.html')
+        })
+    </script>
+</body>
+</html>

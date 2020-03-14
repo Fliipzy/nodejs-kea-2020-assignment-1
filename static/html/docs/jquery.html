@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docs | jQuery</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/prism.css" />
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <div id="page-container">
+
+        <!--Navbar-->
+        <div id="navbar-fragment"></div>
+
+        <div id="content-wrap-docs">
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="doc-overview-col" class="col-3">
+
+                        <!--Content list-->
+                        <div id="doc-list" class="list-group">
+                            <div class="list-group-item list-item-header">jQuery</div>
+                            <a class="list-group-item list-group-item-action" href="#list-item-1">1. How to use jQuery?</a>
+                        </div>
+
+                    </div>
+
+                    <div id="doc-content-col" class="col-8">
+                        
+                        <h1 class="display-4 doc-header">jQuery</h1>
+                        <hr>
+
+                        <p class="doc-paragraf">
+                            jQuery is a large JavaScript library that contains
+                            code for HTML & CSS manipulation, AJAX, effects,
+                            animations and more. <br><br>
+                            
+                            jQuery sets out to simplyfy complicated concepts from 
+                            JavaScript and makes developers able to do a lot of 
+                            stuff by writing fewer lines of code. <br><br>
+                            
+                            You don't necessarily need jQuery to do web development,
+                            but it's by far one of the most popular JS libraries out
+                            there for that sole purpose. <br>
+                        </p>
+
+                        <h4 id="list-item-1" class="doc-lead">How to use jQuery?</h4>
+
+                        <p class="doc-paragraf">
+                            We have two ways of implementing jQuery into our projects: <br><br>
+
+                            First, download the library from <a href="https://jquery.com">jQuery.com</a>. <br>
+                            Now put the file inside your project and link it in your html files by
+                            using the script tag:
+                        </p>
+
+                        <pre class="language-markup"><code>
+&lt;body&gt;
+    ...
+    
+    &lt;script src="./scripts/jquery-3.4.1.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+                        </code></pre>
+                        <br>
+
+                        <p class="doc-paragraf">
+                            The second way is to provide a link from a content delivery network (CDN). <br>
+                            You can copy jQuery CDN links from here <a href="https://code.jquery.com">code.jquery.com</a>.
+                            Now place it in a script tag at the bottom of the HTML body.
+                        </p>
+
+                        <pre class="language-markup"><code>
+&lt;body&gt;
+    ...
+
+    &lt;script src="code.jquery.com/jquery-3.4.1.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+                        </code></pre>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <!--Scripts-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#navbar-fragment').load('../html/fragments/navbar.html')
+            $('#footer-fragment').load('../html/fragments/footer.html')
+        })
+    </script>
+</body>
+</html>

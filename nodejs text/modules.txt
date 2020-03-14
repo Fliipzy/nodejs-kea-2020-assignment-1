@@ -1,0 +1,40 @@
+:: Modules ::
+ 
+Modules in Node.js can be considered to be like javascript libraries.
+They can be included in your node projects, thereby making it's set of functions
+available to be called.
+
+Therefor modules are necessary, in case you want to execute code from another .js file.
+
+_How to include modules?_
+
+In order to include a module in your project you use the require() function. It takes
+in the name of the module as a parameter.
+
+Heres an example, where our own math module is being included:
+
+// const math = require('MyMathModule');
+
+Notice that the require function returns an object that we store in a variable.
+We can now call the functions from the module by using our variable 'math',
+like so:
+
+// math.addTwoNumbers(3, 5);
+
+_How to create modules?_
+
+You can create your own modules by using the keyword 'exports'.
+The example below shows the creation of our math module:
+
+// exports.addTwoNumbers(num1, num2) {
+// 	return num1 + num2;
+// };
+
+
+_Built in node modules_
+
+Node already comes prepacked with 'built-in modules' such as the http module for 
+hosting web servers and serving content. In fact, node comes with many built-in
+modules, such as 'zlib' for compressing and decompressing, 'path' to handle file paths,
+'util' for accessing utility functions and so much more. For a greater list of
+built in modules, please see <a href="https://www.w3schools.com/nodejs/ref_modules.asp">this</a>.

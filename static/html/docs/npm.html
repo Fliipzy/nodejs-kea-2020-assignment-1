@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docs | NPM</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/prism.css" />
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <div id="page-container">
+
+        <!--Navbar-->
+        <div id="navbar-fragment"></div>
+
+        <div id="content-wrap-docs">
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="doc-overview-col" class="col-3">
+
+                        <!--Content list-->
+                        <div id="doc-list" class="list-group">
+                            <div class="list-group-item list-item-header">NPM</div>
+                            <a class="list-group-item list-group-item-action" href="#list-item-1">1. Installing packages with NPM</a>
+                        </div>
+
+                    </div>
+
+                    <div id="doc-content-col" class="col-8">
+
+                        <h1 class="display-4 doc-header">NPM</h1>
+
+                        <p class="doc-paragraf">
+
+                            Node package manager (NPM) is a tool for downloading and installing other tools or modules for node.js
+                            NPM consist of 3 main parts: The website, the command line client and the registry. <br> <br>
+                            
+                            The website is where you can browse and discover new packages. You can also set up your own
+                            organization and manage your own packages. <br> <br>
+                            
+                            The command line client is a program that comes with node.js, when you install it on your system.
+                            It's through this program you download and install packages that exists in the npm registry. <br> <br>
+                            
+                            The registry is a large database comprised of the JavaScript code, available to download from the npm client.
+
+                        </p>
+                        
+                        <h4 id="list-item-1" class="doc-lead">Installing packages with NPM</h4>
+
+                        <p class="doc-paragraf">
+                            Whenever you use Node.js, you should include a package.json file in your project. This file is where
+                            you specify metadata that informs NPM about your project and it's dependencies. <br><br>
+                            
+                            Heres a bare minimum package.json file with metadata about our node.js project:
+                        </p>
+
+                        <pre><code class="language-json">
+{
+    "name": "myProject", 
+    "version": "0.1", 
+    "description": "This is my first node.js project"
+    "main": "app.js" //Your main js file
+    "author": "Fred", // Your name
+    "license": "ISC" //License of your choosing
+}
+                        </code></pre>
+                        <br>
+                        
+                        <p class="doc-paragraf">
+                            If you don't want to create and fill out the file yourself you can use npm for that too, just type:
+                        </p>
+                        
+                        <pre><code class="language-shell">
+npm init
+                        </code></pre>
+                        <br>
+
+                        <p class="doc-paragraf">
+                            This command generates a package.json file in your project and you will be prompted to enter the
+                            metadata information as seen above. <br><br>
+                            
+                            Now in order to define the modules we need, we add a collection to the file called "dependencies".
+                            Inside the collection we append packages, like so: 
+                        </p>
+                        
+                        <pre><code class="language-json">
+{
+    "name": "myProject", 
+    "version": "0.1",
+    "description": "This is my first node.js project"
+    "main": "app.js"
+
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}
+                        </code></pre>
+                        <br>
+
+                        <p class="doc-paragraf">
+                            As you can see we specified the package name as the key and the version as value. 
+                            In this example we install the popular Express web framework. More information
+                            about Express can be found <a href="/docs/express">here</a>. <br><br>
+                            
+                            Now, all there's left to do is run one more command from NPM:
+                        </p>
+                        
+                        <pre><code class="language-shell">
+npm install
+                        </code></pre>
+                        <br>
+
+                        <p class="doc-paragraf">
+                            NPM will now look for the package.json file and download all the specified modules, to the project.
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <!--Scripts-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="../../js/prism.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            $('#navbar-fragment').load('../html/fragments/navbar.html')
+            $('#footer-fragment').load('../html/fragments/footer.html')
+        })
+    </script>
+</body>
+</html>

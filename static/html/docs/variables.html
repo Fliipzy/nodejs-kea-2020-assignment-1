@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docs | Variables</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/prism.css" />
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <div id="page-container">
+
+        <!--Navbar-->
+        <div id="navbar-fragment"></div>
+
+        <div id="content-wrap-docs">
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="doc-overview-col" class="col-3">
+
+                        <!--Content list-->
+                        <div id="doc-list" class="list-group">
+                            <div class="list-group-item list-item-header">Docs overview</div>
+                            <a class="list-group-item list-group-item-action" href="#list-item-1">1. Datatypes</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-2">2. Creating variables</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-3">3. Var</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-4">4. Let</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-5">5. Const</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-6">6. Hoisting</a>
+                        </div>
+
+                    </div>
+
+                    <div id="doc-content-col" class="col-8">
+                        
+                            <!--Doc content-->
+
+                            <h1 class="display-4 doc-header">Variables</h1>
+                            <hr>
+                            <p class="doc-paragraf">
+                                Variables in JavaScript are containers for storing data just like any other language.
+                            </p>
+
+                            <!--Data types-->
+                            <h4 id="list-item-1" class="doc-lead">Data types</h4>
+                            <p class="doc-paragraf">
+                                There are 7 primitive data types in JavaScript:<br>
+                            </p>
+                            <ul>
+                                <li>Boolean : true, false</li>
+                                <li>Null : Nonexisting</li>
+                                <li>Undefined : Value of all variables after being declared</li>
+                                <li>Number : 64-bit floating point number</li>
+                                <li>BigInt : Whole numbers up to (2^53)-1</li>
+                                <li>String : Text</li>
+                                <li>Symbol : Represents a unique identifier</li>
+                            </ul>
+
+                            <p class="doc-paragraf">
+                                Everything that is not a primitive data type in JavaScript is an object.
+                                That includes functions, arrays or class instances.
+                            </p>
+
+                            <!--Creating variables-->
+                            <h4 id="list-item-2" class="doc-lead">Creating variables</h4>
+
+                            <p class="doc-paragraf">
+                                Because JavaScript is a dynamic weakly typed language, we don't use type annotations, like in Java or C#.
+                            </p>
+
+                            <pre><code class="language-javascript">
+var x = 10;
+var y = 'Hello, World!';
+                            </code></pre>
+                            <br>
+                            <p class="doc-paragraf">
+                                In the example above we declared two variables and assigned them different value types.<br><br>
+
+                                What should also be noticed is that we used the keyword 'var' to declare each variable.<br>
+                                There are three keywords for declaring variables: var, let and const.
+                            </p>
+
+                            <!--Var-->
+                            <h4 id="list-item-3" class="doc-lead">Var</h4>
+
+                            <p class="doc-paragraf">
+                                var declares that the variable now can be accessed from all scopes in the program, 
+                                also considered a global variable. <br> var variables doesn't need to be assigned any value.
+                            </p>
+
+                            <pre><code class="language-javascript">
+function someMethod() {
+    var x = 'global';
+}
+
+console.log(x); //global
+                            </code></pre>
+                            <br>
+
+                            <p class="doc-paragraf">
+                                The above example is terrible code, but shows how global variables can be accessed from anywhere.<br>
+                                That's also why the keyword should be used with caution, and why it's generally considered
+                                better to use the let keyword instead.
+                            </p>
+
+                            <!--Let-->
+                            <h4 id="list-item-4" class="doc-lead">Let</h4>
+
+                            <p class="doc-paragraf">
+                                let declares that the variable is only accessable from the local scope it was declared in.<br>
+                                Like var, let optionally doesn't need any assigned value either.
+                            </p>
+
+                            <pre><code class="language-javascript">
+function someMethod() {
+    let x = 'local';
+    console.log(x); //local
+}
+
+console.log(x); // crashes because we're out of x's scope.
+                            </code></pre>
+                            <br>
+
+                            <!--Const-->
+                            <h4 id="list-item-5" class="doc-lead">Const</h4>
+                            <p class="doc-paragraf">
+                                const declares a read-only variable that needs to be assigned a value at it's declaration.<br>
+                                const variables can't be assigned new values after being declarated.<br>
+                                You should always use the const keyword if your variable doesn't change value.
+                            </p>
+                            <pre><code class="language-javascript">
+const pi = 3.141592;
+const myName = 'John Doe';
+                            </code></pre>
+                            <br>
+
+                            <!--Hoisting-->
+                            <h4 id="list-item-6" class="doc-lead">Hoisting</h4>
+                            <p class="doc-paragraf">
+                                Consider the following code:
+                            </p>
+
+                            <pre><code class="language-javascript">
+console.log(x); //undefined
+var x = 10;
+                            </code></pre>
+                            <br>
+
+                            <p class="doc-paragraf">
+                                If you've coded in languages like C or C++, you'd probably expect the above program<br>
+                                to throw an unknown reference exception here.<br>
+                                This works in JavaScript however, due to a concept called hoisting.<br>
+                                Whenever JavaScript code is being interpreted, the interpreter will make sure all<br>
+                                the global variables (vars) are moved/hoisted to the top of the file. <br><br>
+
+                                Program after hoisting:
+                            </p>
+
+                            <pre><code class="language-javascript">
+var x = 10;
+console.log(x); //undefined
+                            </code></pre>
+                            <br>
+
+                            <p class="doc-paragraf">
+                                Hoisting does the same with functions:
+                            </p>
+                            <pre><code class="language-javascript">
+greet(); //Hello, World
+
+function greet() {
+    console.log('Hello, World');
+}
+                            </code></pre>
+                            <br>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <!--Scripts-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="../../js/prism.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            $('#navbar-fragment').load('../html/fragments/navbar.html')
+            $('#footer-fragment').load('../html/fragments/footer.html')
+        })
+    </script>
+</body>
+</html>

@@ -61,6 +61,8 @@ The topics of this section is:
 
 	What is Nodemon?
 
+	How to install it?
+
 	How to use it?
 
 __Express__

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docs | Objects</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/prism.css" />
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+
+<body>
+    <div id="page-container">
+
+        <!--Navbar-->
+        <div id="navbar-fragment"></div>
+
+        <div id="content-wrap-docs">
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="doc-overview-col" class="col-3">
+
+                        <!--Content list-->
+                        <div id="doc-list" class="list-group">
+                            <div class="list-group-item list-item-header">Objects</div>
+                            <a class="list-group-item list-group-item-action" href="#list-item-1">1. Pass by reference vs value</a>
+                        </div>
+
+                    </div>
+
+                    <div id="doc-content-col" class="col-8">
+
+                        <h1 class="display-4 doc-header">Objects</h1>
+                        <hr>
+
+                        <p class="doc-paragraf">
+                            An object in JavaScript is a datastructure that contains key value pairs.<br>
+                            Objects are reference types, that differs from variables which are value types. <br>
+                            Value types are stored on the stack memory, that means the variable
+                            now holds a value directly.<br>
+                            Reference types has a pointer (address value) stored on the stack, 'pointing' to
+                            the address in heap memory where it's values are stored.<br><br>
+
+                            Reference vs value types will be described further below.<br><br>
+
+                            You can define an object by using the object literal syntax:
+                        </p>
+
+                        <pre><code class="language-javascript">
+const myObj = {
+    name: 'John Doe',
+    age: 47,
+    hobby: 'JavaScript'
+}
+                        </code></pre>
+                        <br>
+
+                        <p class="doc-paragraf">
+                            We can now access the values inside 'myObj' by using the dot notation or brackets:
+                        </p>
+
+                        <pre><code class="language-javascript">
+//With dot notation
+console.log(myObj.name); //John doe
+console.log(myObj.age); //47
+
+//With brackets
+console.log(myObj['name']); //John doe
+console.log(myObj['age']); //47
+                        </code></pre>
+                        <br>
+
+                        <p class="doc-paragraf">
+                            Objects can also have functions as values:
+                        </p>
+
+                        <pre><code class="language-javascript">
+const myObj = {
+    name: 'John Doe',
+    age: 47,
+    hobby: 'JavaScript',
+    favFunc: function() {
+        console.log('Hello, World!');
+    }
+}
+
+myObj.favFunc(); //Hello, World!
+                        </code></pre>
+                        <br>
+
+                        <h4 id="list-item-1" class="doc-lead">Pass by reference vs value</h4>
+                        <p class="doc-paragraf">
+                            As already described, reference and value types are treated different when stored in memory.
+                            Another place they're different is how they're passed and changed inside functions. <br><br>
+
+                            To demonstrate this, heres a function that takes in a number and increments it's value:
+                        </p>
+                    
+                        <pre><code class="language-javascript">
+function addOne(number) {
+    number += 1;
+}
+
+let x = 1;
+addOne(x);
+
+console.log(x); //1
+                        </code></pre>
+                        <br>
+
+                        <p class="doc-paragraf">
+                            It's understandable that a lot of people, who doesn't know about ref vs value passing, 
+                            would expect x's value to be 2 at the end.<br> It's still 1 because x is passed 
+                            to the addOne function as a value. <br><br>
+                            
+                            That means when the program has been interpreted, it's actually the number 1,
+                            that's being passed, no reference to x whatsoever:
+                        </p>
+
+                        <pre><code class="language-javascript">
+function addOne(number) {
+    number += 1;
+}
+
+let x = 1;
+addOne(1); //<-- What really happens
+
+console.log(x); //1
+                        </code></pre>
+                        <br>
+
+                        <p class="doc-paragraf">
+                            Objects can however, be passed into functions and have their values changed:
+                        </p>
+
+                        <pre><code class="language-javascript">
+function addOneToObj(obj) {
+    obj.value += 1;
+}
+
+let myObj = {
+    value : 1
+}
+
+addOneToObj(myObj);
+console.log(myObj.value); //2
+                        </code></pre>
+                        <br>
+
+                        <p class="doc-paragraf">
+                            This is again because our object is now being passed as a reference. <br> Essentially that
+                            means the parameter obj in our addOneToObj function acts as a pointer to the object
+                            in memory.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--Scripts-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="../../js/prism.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#navbar-fragment').load('../html/fragments/navbar.html')
+            $('#footer-fragment').load('../html/fragments/footer.html')
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docs | Nodemon</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/prism.css" />
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <div id="page-container">
+
+        <!--Navbar-->
+        <div id="navbar-fragment"></div>
+
+        <div id="content-wrap-docs">
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="doc-overview-col" class="col-3">
+
+                        <!--Content list-->
+                        <div id="doc-list" class="list-group">
+                            <div class="list-group-item list-item-header">Nodemon</div>
+                            <a class="list-group-item list-group-item-action" href="#list-item-1">1. How to install it?</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-2">2. How to use it?</a>
+                        </div>
+
+                    </div>
+
+                    <div id="doc-content-col" class="col-8">
+
+                        <h1 class="display-4 doc-header">Nodemon</h1>
+                        <hr>
+
+                        <p class="doc-paragraf">
+                            Nodemon is a program that helps node developers speed up their development process, by
+                            automatically restarting the application when a file changes in the project. <br> <br>
+    
+                            It's very easy to use since it doesn't require any additional code or configuration in your project.
+                        </p>
+
+                        <h4 id="list-item-1" class="doc-lead">How to install it?</h4>
+
+                        <p class="doc-paragraf">
+                            You can use <a href="/docs/npm">NPM</a> to download and install the program:
+                        </p>
+
+                        <pre><code class="language-shell">
+npm install -g nodemon
+                        </code></pre>
+                        <br>
+
+                        <p class="doc-paragraf">
+The <b>-g</b> flag indicates that you want to install nodemon globally on your system, it also
+puts the nodemon executable on your system path. <br><br>
+
+If you install nodemon locally the variable path will not be set. Instead you could use
+the node package executor (NPX) tool for that.
+                        </p>
+                            
+                        <h4 id="list-item-2" class="doc-lead">How to use it?</h4>
+
+                        <p class="doc-paragraf">
+                            It's very simple to start your node application with nodemon, just type:
+                        </p>
+
+                        <pre><code class="language-shell">
+nodemon app.js
+                        </code></pre>
+                        <br>
+
+                        <p class="doc-paragraf">
+                            Once you need to close the running server simply type Ctrl + C into your terminal.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <!--Scripts-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="../../js/prism.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            $('#navbar-fragment').load('../html/fragments/navbar.html')
+            $('#footer-fragment').load('../html/fragments/footer.html')
+        })
+    </script>
+</body>
+</html>

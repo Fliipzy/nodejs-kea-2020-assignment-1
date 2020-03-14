@@ -1,0 +1,16 @@
+:: Node.js basics ::
+
+__What is it?__
+Node.JS is a runtime enviroment for running JavaScript code outside the browser, which you couldn't do before.
+It runs on the very popular JavaScript V8 engine created by the Google Chrome people.
+
+__What can I do with it?__
+You can do alot with Node.JS. Wanna build easy scalable back-end web applications,
+maybe desktop applications or use it's awesome package manager NPM?
+These are just some of the things you can do with node.
+
+__How do I run a node program?__
+Just locate the folder where your .js program is stored.
+Now, in your favorite shell ─ run this command:
+
+	C:\Users\Your profile\MyProject> Node App.js 

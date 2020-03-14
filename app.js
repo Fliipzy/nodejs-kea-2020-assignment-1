@@ -6,25 +6,14 @@ const app = express();
 const db = require('./psuedoDB');
 const Student = require('./student');
 
-//Debug section DELETE
-let stud1 = new Student(1, 'Frederik', 'Lundbeck Jørgensen', ['Node.js', 'C', 'Hardcore Python']);
-let stud2 = new Student(2, 'Mathias', 'Sørensen', ['Padc', 'Android', 'iOS']);
-let stud3 = new Student(3, 'Andreas', 'Kepp', ['C', 'Node.js', 'Java']);
-let stud4 = new Student(4, 'Kenny', 'Petersen', ['Python Beginner', 'Padc', 'C']);
-
-db.createStudent(stud1);
-db.createStudent(stud2);
-db.createStudent(stud3);
-db.createStudent(stud4);
-
 const port = 8080;
+
 
 //Set up static directory routing
 
 app.use(express.static('./static/'));
 
 //HTML file routing
-
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/static/html/index.html');
@@ -38,14 +27,51 @@ app.get('/api', (req, res) => {
     res.sendFile(__dirname + '/static/html/api.html');
 });
 
-app.get('/docs', (req, res) => {
-    res.sendFile(__dirname + '/static/html/docs.html');
+//Docs specific endpoints
+
+app.get('/docs/overview', (req, res) => {
+    res.sendFile(__dirname + '/static/html/docs/overview.html');
 });
 
-app.get('/docs/basics', (req, res) => {
-    res.sendFile(__dirname + '/static/html/basics.html');
+app.get('/docs/node', (req, res) => {
+    res.sendFile(__dirname + '/static/html/docs/nodebasics.html');
 });
 
+app.get('/docs/variables', (req, res) => {
+    res.sendFile(__dirname + '/static/html/docs/variables.html');
+});
+
+app.get('/docs/functions', (req, res) => {
+    res.sendFile(__dirname + '/static/html/docs/functions.html');
+});
+
+app.get('/docs/objects', (req, res) => {
+    res.sendFile(__dirname + '/static/html/docs/objects.html');
+});
+
+app.get('/docs/modules', (req, res) => {
+    res.sendFile(__dirname + '/static/html/docs/modules.html');
+});
+
+app.get('/docs/jquery', (req, res) => {
+    res.sendFile(__dirname + '/static/html/docs/jquery.html');
+});
+
+app.get('/docs/nodemon', (req, res) => {
+    res.sendFile(__dirname + '/static/html/docs/nodemon.html');
+});
+
+app.get('/docs/express', (req, res) => {
+    res.sendFile(__dirname + '/static/html/docs/express.html');
+});
+
+app.get('/docs/ajax', (req, res) => {
+    res.sendFile(__dirname + '/static/html/docs/ajax.html');
+});
+
+app.get('/docs/npm', (req, res) => {
+    res.sendFile(__dirname + '/static/html/docs/npm.html');
+});
 
 //Api routing
 

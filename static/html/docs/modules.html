@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docs | Modules</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/prism.css" />
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <div id="page-container">
+
+        <!--Navbar-->
+        <div id="navbar-fragment"></div>
+
+        <div id="content-wrap-docs">
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="doc-overview-col" class="col-3">
+
+                        <!--Content list-->
+                        <div id="doc-list" class="list-group">
+                            <div class="list-group-item list-item-header">Modules</div>
+                            <a class="list-group-item list-group-item-action" href="#list-item-1">1. How to include modules?</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-2">1. How to create modules?</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-3">1. Built in node modules</a>
+                        </div>
+
+                    </div>
+
+                    <div id="doc-content-col" class="col-8">
+                        
+                        <h1 class="display-4 doc-header">Modules</h1>
+                        <hr>
+
+                        <p class="doc-paragraf">
+                            Modules in Node.js can be considered to be like javascript libraries.<br>
+                            They can be included in your node projects, thereby making it's set of functions
+                            available to be called. <br><br>
+
+                            Therefor modules are necessary, in case you want to execute code from another .js file.
+                        </p>
+
+                        <h4 id="list-item-1" class="doc-lead">How to include modules?</h4>
+
+                        <p class="doc-paragraf">
+                            In order to include a module in your project you use the require() function. It takes
+                            in the name of the module as a parameter. <br><br>
+
+                            Heres an example, where our own math module is being included:
+                        </p>
+
+                        <pre><code class="language-javascript">
+const math = require('MyMathModule');
+                        </code></pre>
+                        <br>
+
+                        <p class="doc-paragraf">
+                            Notice that the require function returns an object that we store in a variable.<br>
+                            We can now call the functions from the module by using our variable 'math',
+                            like so:
+                        </p>
+
+                        <pre><code class="language-javascript">
+math.addTwoNumbers(3, 5);
+                        </code></pre>
+                        <br>
+
+                        <h4 id="list-item-2" class="doc-lead">How to create modules?</h4>
+
+                        <p class="doc-paragraf">
+                            You can create your own modules by using the keyword 'exports'. <br>
+                            The example below shows the creation of our math module:
+                        </p>
+
+                        <pre><code class="language-javascript">
+exports.addTwoNumbers(num1, num2) {
+    return num1 + num2;
+};
+                        </code></pre>
+                        <br>
+
+                        <h4 id="list-item-3" class="doc-lead">Built in node modules</h4>
+
+                        <p class="doc-paragraf">
+                            Node already comes prepacked with 'built-in modules' such as the http module for 
+                            hosting web servers and serving content. In fact, node comes with many built-in
+                            modules, such as 'zlib' for compressing and decompressing, 'path' to handle file paths,
+                            'util' for accessing utility functions and so much more. For a greater list of
+                            built in modules, look <a href="https://www.w3schools.com/nodejs/ref_modules.asp">here</a>.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <!--Scripts-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="../../js/prism.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            $('#navbar-fragment').load('../html/fragments/navbar.html')
+            $('#footer-fragment').load('../html/fragments/footer.html')
+        })
+    </script>
+</body>
+</html>

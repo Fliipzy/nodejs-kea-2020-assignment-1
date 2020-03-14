@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docs | Functions</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/prism.css" />
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <div id="page-container">
+
+        <!--Navbar-->
+        <div id="navbar-fragment"></div>
+
+        <div id="content-wrap-docs">
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="doc-overview-col" class="col-3">
+
+                        <!--Content list-->
+                        <div id="doc-list" class="list-group">
+                            <div class="list-group-item list-item-header">Functions</div>
+                            <a class="list-group-item list-group-item-action" href="#list-item-1">1. Higher order functions</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-2">2. Callbacks</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-3">3. Inner functions</a>
+                        </div>
+
+                    </div>
+
+                    <div id="doc-content-col" class="col-8">
+                        
+                        <h1 class="display-4 doc-header">Functions</h1>
+                        <hr>
+
+                        <p class="doc-paragraf">
+                            A function in JavaScript is a block of code, that can take input and 
+                            return an output, like most other programming languages.
+                        </p>
+
+                        <pre><code class="language-javascript">
+function concatStrings(text1, text2) {
+    return text1 + text2;
+}
+                        </code></pre>
+                        <br>
+
+                        <p class="doc-paragraf">
+                            The code inside a function can be executed by invoking (calling) the function:
+                        </p>
+
+                        <pre><code class="language-javascript">
+let x = 'Hello, ';
+let y = 'World!';
+
+let result = concatStrings(x, y);
+
+console.log(result) //Hello, World!
+                        </code></pre>
+                        <br>
+
+                        <h4 id="list-item-1" class="doc-lead">Higher order functions</h4>
+
+                        <p class="doc-paragraf">
+                            JavaScript supports higher order functions, that means functions that
+                            can take in other functions as arguments or return functions.
+                        </p>
+
+                        <pre><code class="language-javascript">
+function runFunc(func) {
+    func();
+}
+                        </code></pre>
+                        <br>
+
+                        <p class="doc-paragraf">
+                            runFunc can now run another function, by invoking runFunc:
+                        </p>
+
+                        <pre><code class="language-javascript">
+function greet() {
+    console.log('Hello, world!');
+}
+
+function runFunc(func) {
+    func();
+}
+
+runFunc(greet); //Hello, World!
+                        </code></pre>
+                        <br>
+
+                        <p class="doc-paragraf">
+                            We can also call runFunc by passing it an anonymous function:
+                        </p>
+
+                        <pre><code class="language-javascript">
+runFunc(function() {
+    console.log('anonymous!');
+}); 
+//anonymous!
+                        </code></pre>
+                        <br>
+
+                        <p class="doc-paragraf">
+                            They're called anonymous because they haven't got a name.
+                        </p>
+
+                        <h4 id="list-item-2" class="doc-lead">Callbacks</h4>
+
+                        <p class="doc-paragraf">
+                            Callbacks are functions that are invoked when something else happens.
+                            So wether the function runs or not is determined by the other thing happening.
+                        </p>
+
+                        <pre><code class="language-javascript">
+function callBackAfterMilliSecs(callback, ms) {
+    setTimeout(callback, ms)
+}
+
+callBackAfterMilliSecs(function () {
+    console.log('Two seconds has passed!');
+}, 2000);
+                        </code></pre>
+                        <br>
+
+                        <p class="doc-paragraf">
+                            Heres a callback function which execution relies on an input value:
+                        </p>
+
+                        <pre><code class="language-javascript">
+function callBackIfValueGreatEnough(callback, value) {
+    if (value > 3) {
+        callback();
+        return;
+    }
+    console.log("Value wasn't greater than 3!")
+}
+                        </code></pre>
+                        <br>
+
+                        <h4 id="list-item-3" class="doc-lead">Inner functions</h4>
+
+                        <p class="doc-paragraf">
+                            JavaScript supports inner functions too, meaning functions inside functions.
+                        </p>
+
+                        <pre><code class="language-javascript">
+function outer(num1) {
+    let value = 10;
+    function inner(num2) {
+        console.log(num1 + num2);
+    }
+    inner(value);
+}
+
+outer(5); //15
+                        </code></pre>
+                        <br>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <!--Scripts-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="../../js/prism.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            $('#navbar-fragment').load('../html/fragments/navbar.html')
+            $('#footer-fragment').load('../html/fragments/footer.html')
+        })
+    </script>
+</body>
+</html>

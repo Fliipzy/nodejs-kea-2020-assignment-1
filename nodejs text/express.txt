@@ -3,16 +3,48 @@
 Express is a node.js web framework that provides lots of features for web applications.
 Creating RESTful API's with Express is very quick and easy.
 
+__Installing and starting Express__
+
+The easiest way to install Express is with NPM, to install and save it in your dependencies list, run 
+this in your terminal:
+
+    npm install express --save
+
+Now inside your app.js file, write the following:
+
+    const express = require('express');
+    const app = express();
+    const port = 8080;
+
+    ...
+
+    app.listen(port, function() {
+        console.log(`Server started listening on port ${port}`);
+    });
+
+Now all we have to do is run our app.js with node and the Express web server will start.
+Between the constant objects and the listen function, is where we route our endpoints.
+
 __Routing endpoints__
 
 Endpoints are our application's (URIs) E.g /api/students, /about, /contact. When we route
-endpoints we essential decides how our web server responds to the clients requests.
+endpoints we essential decides how our web-server responds to the clients requests.
 For example, if a client sends this HTTP request:
 
-    GET /docs/express HTTP/1.1
+    GET /docs/express.html 
 
-We want to provide/send back the content associated with that endpoint - an html file in this
-instance. 
+Now we want to send back the content associated with that endpoint - an html file in this
+instance. This is pretty straight forward with Express, inside you app.js file write the following:
+
+    app.get('/docs/express', function(req, res) {
+        res.sendFile(__dirname + '/html/express.html');
+    });
+
+Above we just routed a specific endpoint with the GET HTTP method. As you may be able to point out
+the structure for routing is the following:
+
+    app.HTTP_METHOD(PATH, HANDLER)
+
 
 __Serving static content__
 
