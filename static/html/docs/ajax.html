@@ -23,7 +23,7 @@
                         <!--Content list-->
                         <div id="doc-list" class="list-group">
                             <div class="list-group-item list-item-header">AJAX</div>
-                            <a class="list-group-item list-group-item-action" href="#list-item-1">1. </a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-1">1. Try it yourself</a>
                         </div>
 
                     </div>
@@ -53,11 +53,42 @@
                         <h4 id="list-item-1" class="doc-lead">Try it yourself</h4>
 
                         <p class="doc-paragraf">
-                            I've set up an example that uses AJAX to asynchronously (not having to reload page) fetch jokes
-                            from a public api called <a href="https://jokes.one/api/joke/">Jokes One</a>. <br><br>
+                            I've set up an example that uses vanilla (No 3rd party libs) AJAX to asynchronously (not having to reload page) fetch jokes
+                            from a public REST API called <a href="https://icanhazdadjoke.com/api">icanhazdadjoke</a>. <br><br>
 
-                            
+                            If you click the button below, an asynchronous GET request will be made to the API and the result will be displayed below.
                         </p>
+
+                        <br>
+                        <!--I don't condone styling directly in the html, but for times sake -->
+                        <div style="text-align: center;">
+                            <button id="myBtn" class="btn btn-success">Execute AJAX!</button>
+                            <br><br>
+                            <p id="jokeText" class="doc-paragraf" style="font-weight: bold;"></p>
+                        </div>
+                        <br>
+
+                        <p class="doc-paragraf">
+                            Heres the javascript code that makes this possibly:
+                        </p>
+
+                        <pre><code class="language-javascript">
+let jokeText = document.getElementById('jokeText');
+
+//AJAX function
+function getRandomJoke() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let json = JSON.parse(this.responseText);
+            jokeText.innerText = json['joke'];
+        }
+    };
+    xhttp.open("GET", "https://icanhazdadjoke.com/", true);
+    xhttp.setRequestHeader("Accept", "application/json");
+    xhttp.send();
+}
+                        </code></pre>
 
                     </div>
                 </div>
@@ -77,7 +108,29 @@
         $(document).ready(function () {
             $('#navbar-fragment').load('../html/fragments/navbar.html')
             $('#footer-fragment').load('../html/fragments/footer.html')
+
+            $('#myBtn').click(function() {
+                getRandomJoke();  
+            });
+
         })
+
+        let jokeText = document.getElementById('jokeText');
+
+        //AJAX function
+        function getRandomJoke() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    let json = JSON.parse(this.responseText);
+                    jokeText.innerText = json['joke'];
+                }
+            };
+            xhttp.open("GET", "https://icanhazdadjoke.com/", true);
+            xhttp.setRequestHeader("Accept", "application/json");
+            xhttp.send();
+        }
+
     </script>
 </body>
 </html>

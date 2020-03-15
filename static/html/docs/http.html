@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docs | HTTP</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/prism.css" />
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <div id="page-container">
+
+        <!--Navbar-->
+        <div id="navbar-fragment"></div>
+
+        <div id="content-wrap-docs">
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="doc-overview-col" class="col-3">
+
+                        <!--Content list-->
+                        <div id="doc-list" class="list-group">
+                            <div class="list-group-item list-item-header">HTTP</div>
+                            <a class="list-group-item list-group-item-action" href="#list-item-1">1. GET</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-2">2. POST</a>
+                        </div>
+
+                    </div>
+
+                    <div id="doc-content-col" class="col-8">
+
+                        <h1 class="display-4 doc-header">HTTP</h1>
+                        <hr>
+
+                        <p class="doc-paragraf">
+                            HyperText Transfer Protocol (HTTP) is the protocol used by the World Wide Web (WWW), to
+                            define how data is formatted and transmitted between clients and web-servers. <br><br>
+
+                            If you've ever used a browser before you'll without a doubt have used HTTP. Something
+                            as simple as navigating to google.com is actually sending a HTTP GET request to one of googles
+                            web servers and asking for all the stuff needed to render their website. <br><br>
+
+                            If you're using the Chrome browser you can click <kbd>Ctrl + Shift + I</kbd> to open the DevTools window.
+                            Inside this window you can inspect a websites content: html, css & javascript. You can also
+                            navigate to the <b>Network</b> tab, to see all the network activity, including HTTP requests.
+                        </p>
+
+                        <div class="inline-block">
+                            <img src="https://developers.google.com/web/tools/chrome-devtools/images/panels/elements.png" 
+                            class="img-fluid" width="600px" alt="Chrome DevTools">
+    
+                            <img src="https://developers.google.com/web/tools/chrome-devtools/images/panels/network.png" 
+                            class="img-fluid" width="600px" alt="Chrome DevTools">
+                        </div>
+
+                        
+
+                        <p class="doc-paragraf">
+                            Try opening the DevTools on this page and navigate to the network tab. Now try to refresh the 
+                            page and check the network tab. <br><br>
+
+                            A lot of requests should now be displayed in the list. <br> The first highlighted request in the picture below
+                            is the html file GET request for this page.
+                        </p>
+
+                        <img src="https://i.imgur.com/UV5yieJ.png" 
+                            class="rounded img-fluid" width="600px" alt="Chrome DevTools"
+                            style="box-shadow: rgb(146, 146, 146) 0px 10px 20px 5px; margin: 1em;">
+                        <br><br>
+
+                        <p class="doc-paragraf">
+                            The window to the right shows information about the request: <br> <br>
+                            <i>Request URL</i> is the endpoint the request was directed at. <br>
+                            <i>Request Method</i> shows what HTTP method the request was. <br>
+                            <i>Status code</i> is a number that indicates how the request went, 200 means everything went okay. <br>
+                        </p>
+
+                        <h4 id="list-item-1" class="doc-lead">GET method</h4>
+
+                        <p class="doc-paragraf">
+                            As i mentioned above we use the GET request method wether we know it or not, when browsing the web: <br>
+                            When we load websites, look at google images etc.
+                            It's fair to say the GET method is the most common HTTP method by far. <br><br>
+
+                            When we use the GET method it means we as clients <i>requests</i> data from a resource (web-server). <br>
+                            GET requests should only retrieve data, not send it. I use the word should because how HTTP is implemented
+                            by people in their web applications can differ. 
+                        </p>
+
+                        <h4 id="list-item-2" class="doc-lead">POST method</h4>
+
+                        <p class="doc-paragraf">
+                            A POST method on the other hand should send data. Examples of sending POST requests is whenever you log into 
+                            some site: <i>facebook, youtube etc.</i><br> 
+                            When you fill out the textfields that requires your username and password 
+                            and hit the login button a POST request is/should be sent.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!--Scripts-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="../../js/prism.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            $('#navbar-fragment').load('../html/fragments/navbar.html')
+            $('#footer-fragment').load('../html/fragments/footer.html')
+        })
+    </script>
+</body>
+</html>

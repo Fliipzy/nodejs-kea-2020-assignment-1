@@ -7,15 +7,61 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/prism.css" />
 </head>
 <body>
     <!--Navbar fragment-->
     <div id="navbar-fragment"></div>
 
+    <div class="container">
+        <br>
+        <h1 class="display-4">REST API overview</h1>
+        <hr>
+
+        <p class="doc-paragraf">
+            This REST API serves and recieves student objects. Here's a student in json format:
+        </p>
+
+        <pre><code class="language-json">
+{
+    "id" : 1,
+    "firstName" : "Frederik",
+    "lastName" : "Lundbeck Jørgensen",
+    "classes" : [
+        "Node.js",
+        "C",
+        "Advanced Python"
+    ]
+}
+        </code></pre>
+        <br>
+        <hr>
+
+        <h1 class="display-4" style="font-size: 2.5em">Endpoints</h1>
+        <br>
+
+        <h4 class="success"><b>GET</b> /students</h4>
+        <h5>Returns all the students in the database.</h5>
+        <pre><code class="language-shell">
+https://localhost:8080/api/students
+        </code></pre>
+        <br>
+
+        <h4 class="success"><b>POST</b> /students</h4>
+        <h5>Inserts a student object into the database.</h5> 
+        <pre><code class="language-shell">
+https://localhost:8080/api/students
+        </code></pre>
+        <br>
+        
+
+    </div>
+
     <!--Scripts-->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="../js/prism.js"></script>
 
     <!--Footer fragment-->
     <div id="footer-fragment"></div>

@@ -73,6 +73,10 @@ app.get('/docs/npm', (req, res) => {
     res.sendFile(__dirname + '/static/html/docs/npm.html');
 });
 
+app.get('/docs/http', (req, res) => {
+    res.sendFile(__dirname + '/static/html/docs/http.html');
+});
+
 //Api routing
 
 app.use(express.json());
