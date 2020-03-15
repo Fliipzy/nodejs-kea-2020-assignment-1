@@ -44,8 +44,42 @@
                             
                             You don't necessarily need jQuery to do web development,
                             but it's by far one of the most popular JS libraries out
-                            there for that sole purpose. <br>
+                            there for that sole purpose. <br><br>
                         </p>
+
+                        <!--I don't condone styling directly in the html, but for times sake -->
+                        <div class="btn-wrapper" style="text-align: center;">
+
+                            <button id="myBtn" type="button" class="btn btn-light" 
+                            style="box-shadow: rgb(112, 112, 112) 4px 5px 6px;">jQuery test!</button>
+
+                            <br> <br>
+                            <p class="doc-paragraf">
+                                This button has a jQuery function attached to it's click event. <br> Try clicking it!<br>
+                                
+                            </p>
+                        </div>
+                        <br>
+
+                        <p class="doc-paragraf">
+                            The jQuery code for making this work, looks like this:
+                        </p>
+
+                        <pre><code class="language-javascript">
+$('#myBtn').click(function() {
+    $(this).removeClass()
+    .addClass(getRandomBtnClass());
+});
+
+function getRandomBtnClass() {
+    let catalog = ['btn btn-primary', 'btn btn-light', 
+    'btn btn-success', 'btn btn-danger', 'btn btn-warning',
+    'btn btn-info', 'btn btn-dark', 'btn btn-secondary'];
+
+    return catalog[Math.floor(Math.random() * catalog.length)];  
+}
+                        </code></pre>
+                        <br>
 
                         <h4 id="list-item-1" class="doc-lead">How to use jQuery?</h4>
 
@@ -57,7 +91,7 @@
                             using the script tag:
                         </p>
 
-                        <pre class="language-markup"><code>
+                        <pre><code class="language-markup">
 &lt;body&gt;
     ...
     
@@ -72,7 +106,7 @@
                             Now place it in a script tag at the bottom of the HTML body.
                         </p>
 
-                        <pre class="language-markup"><code>
+                        <pre><code class="language-markup">
 &lt;body&gt;
     ...
 
@@ -92,12 +126,31 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="../../js/prism.js"></script>
 
     <script>
         $(document).ready(function () {
             $('#navbar-fragment').load('../html/fragments/navbar.html')
             $('#footer-fragment').load('../html/fragments/footer.html')
+
+            //myBtn script
+            $('#myBtn').click(function() {
+
+                $(this).removeClass()
+                .addClass(getRandomBtnClass());
+
+            });
         })
+
+        function getRandomBtnClass() {
+
+            let catalog = ['btn btn-primary', 'btn btn-light', 
+            'btn btn-success', 'btn btn-danger', 'btn btn-warning',
+            'btn btn-info', 'btn btn-dark', 'btn btn-secondary'];
+
+            return catalog[Math.floor(Math.random() * catalog.length)];  
+        }
+
     </script>
 </body>
 </html>
